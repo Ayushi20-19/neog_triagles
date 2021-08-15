@@ -7,6 +7,49 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>hypotenuse</h1>
+    <h1>hypotenuse of triangles</h1>
+    Enter the lengths of sides of right angle triangle
+    a=<input id="side1"></input>
+    b=<input id="side2"></input>
+    <button id="btn-check">Check</button>
+    <div >Hypotenuse will be calculated here- <span class="output"></span></span></div>
   </body>
+  <script>
+      var side1 =document.querySelector("#side1")
+      var side2 =document.querySelector("#side2")
+     
+      var btncheck =document.querySelector("#btn-check")
+      var output =document.querySelector(".output")
+      const clickHandler =()=>{
+          console.log("clicked", side1.value,side2.value)
+          validangle()
+              
+        }
+        const validangle=()=>{
+            if (Number(side1.value)>0 & Number(side2.value)>0 ){
+              console.log("if ")
+              calculateHypotenuse();
+            }
+            else{
+                output.innerHTML = 'Enter value greater that one';
+            }
+        }
+      const calculateHypotenuse =()=>{
+          var sq = Math.pow(Number(side1.value),2)+Math.pow(Number(side2.value),2)
+          console.log(sq)
+          var c = Math.sqrt(sq)
+          console.log(typeof(c),c)
+          output.innerHTML = c;
+          // if (sum===180){
+          //     console.log("triangle")
+          //     output.innerHTML = 'Yesh it form a triangle';
+          // }
+          // else{
+          //     console.log("not a triangle")
+          //     output.innerHTML = 'Nope it will not form a triangle';
+          // }
+      }
+      btncheck.addEventListener("click", clickHandler);
+
+  </script>
 </html>
