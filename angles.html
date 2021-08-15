@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>angles of triangles</h1>
+    Enter the sides of triangle will tell u will this form a triangle of not
+    <input id="side1"></input>
+    <input id="side2"></input>
+    <input id="side3"></input>
+    <button id="btn-check">Check</button>
+    <div class="output">Answer will come here</div>
+  </body>
+  <script>
+      var side1 =document.querySelector("#side1")
+      var side2 =document.querySelector("#side2")
+      var side3 =document.querySelector("#side3")
+      var btncheck =document.querySelector("#btn-check")
+      var output =document.querySelector(".output")
+      const clickHandler =()=>{
+          console.log("clicked", side1.value,side2.value,side3.value )
+          validangle()
+              
+        }
+        const validangle=()=>{
+            if (Number(side1.value)>0 & Number(side2.value)>0 & Number(side3.value)>0){
+                checkTriangle();
+            }
+            else{
+                output.innerHTML = 'Enter value greater that one';
+            }
+        }
+      const checkTriangle =()=>{
+          var sum = Number(side1.value)+Number(side2.value)+Number(side3.value)
+          console.log(typeof(sum),sum)
+          if (sum===180){
+              console.log("triangle")
+              output.innerHTML = 'Yesh it form a triangle';
+          }
+          else{
+              console.log("not a triangle")
+              output.innerHTML = 'Nope it will not form a triangle';
+          }
+      }
+      btncheck.addEventListener("click", clickHandler);
+
+  </script>
+</html>
