@@ -75,7 +75,20 @@
           output1.style.display = "none";
           output3.style.display = "block";
           output2.style.display = "none";
-          //console.log("clicked", haveBaseHeight.value,haveLenOfSide.value)       
+         
+        }
+        
+        const clickHandlerArea1 = () => {
+          console.log("check")
+            area1()
+        }
+        const clickHandlerArea2 = () => {
+          console.log("check")
+            area2()
+        }
+        const clickHandlerArea3 = () => {
+          console.log("check")
+            area3()
         }
         const area1 = () => {
           console.log(Number(height.value),Number(base.value))
@@ -116,18 +129,6 @@
             }
         }
         
-        const clickHandlerArea1 = () => {
-          console.log("check")
-            area1()
-        }
-        const clickHandlerArea2 = () => {
-          console.log("check")
-            area2()
-        }
-        const clickHandlerArea3 = () => {
-          console.log("check")
-            area3()
-        }
      
       haveBaseHeight.addEventListener("click", clickHandlerHaveBaseHeight);
       haveLenOfSide.addEventListener("click", clickHandlerHaveLenOfSide);
