@@ -7,6 +7,133 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Area of triagles</h1>
+    <h1>Area of triangles</h1>
+    Enter the lengths of sides of right angle triangle
+    <input type="radio" id="haveBaseHeight" name="triangle"><label for="html">If you have base and height length</label><br>
+    <input type="radio" id="haveLenOfSide" name="triangle"> <label for="html">If you have length of 3 sides</label><br>
+    <input type="radio" id="haveSideAngle" name="triangle"> <label for="html">If you have length of 2 sides and included angle</label><br>
+    <div id="output1">solution1
+    <input id="height">height</input>
+    <input id="base">base</input>
+    <button id="btn-check1">Check</button>
+    
+    <span class="area1">Answer will come here</span>
+
+    </div>
+    <div id="output2">solution2
+    <input id="side1">a</input>
+    <input id="side2">b</input>
+    <input id="side3">c</input>
+    <button id="btn-check2">Calculate</button>
+    <span class="area2">Answer will come here</span>
+    </div>
+    <div id="output3">solution3
+      <input id="side11">a</input>
+      <input id="side22">b</input>
+      <input id="ang">angle</input>
+      <button id="btn-check3">Calculate</button>
+      <span class="area3">Answer will come here</span>
+      </div>
   </body>
+  <script>
+      var haveBaseHeight =document.querySelector("#haveBaseHeight");
+      var haveLenOfSide =document.querySelector("#haveLenOfSide");
+      var output1 =document.getElementById("output1");
+      var output2 =document.getElementById("output2");
+      var output3 =document.getElementById("output3");
+      var height= document.querySelector("#height");
+      var base=document.querySelector("#base");
+      var btncheck1 =document.querySelector("#btn-check1")
+      var btncheck2 =document.querySelector("#btn-check2")
+      var btncheck3 =document.querySelector("#btn-check3")
+      var areaOpt =document.querySelector(".area1")
+      var areaOpt2 =document.querySelector(".area2")
+      var areaOpt3 =document.querySelector(".area3")
+      var a =document.querySelector("#side1")
+      var b =document.querySelector("#side2")
+      var c =document.querySelector("#side3")
+      var side1 =document.querySelector("#side11")
+      var side2 =document.querySelector("#side22")
+      var ang =document.querySelector("#ang")
+
+      output1.style.display = "none";
+      output2.style.display = "none";
+      output3.style.display = "none";
+      const clickHandlerHaveBaseHeight =()=>{
+          output1.style.display = "block";
+          output2.style.display = "none";
+          output3.style.display = "none";
+          //console.log("clicked")    
+        }
+        const clickHandlerHaveLenOfSide =()=>{
+          output1.style.display = "none";
+          output2.style.display = "block";
+          output3.style.display = "none";
+          //console.log("clicked", haveBaseHeight.value,haveLenOfSide.value)       
+        }
+        const clickHandlerSideAngle =()=>{
+          output1.style.display = "none";
+          output3.style.display = "block";
+          output2.style.display = "none";
+          //console.log("clicked", haveBaseHeight.value,haveLenOfSide.value)       
+        }
+        const area1 = () => {
+          console.log(Number(height.value),Number(base.value))
+            if (Number(height.value)>0 & Number(base.value)>0 ){
+              //console.log("if")
+            const calArea = 0.5 * (Number(base.value) * Number(height.value))
+            console.log(calArea)
+            areaOpt.innerHTML = "Area is =" + calArea
+            }
+            else{
+              areaOpt.innerHTML = "Enter val greater than 0"
+            }
+        }
+        const area2 = () => {
+          console.log(Number(a.value),Number(b.value),Number(c.value))
+            if (Number(a.value)>0 & Number(b.value)>0 & Number(c.value)>0 ){
+              console.log("if")
+              const sum = (Number(a.value)+Number(b.value)+Number(c.value))/2
+              const calArea =Math.sqrt(sum*(sum-Number(a.value))*(sum-Number(b.value))*(sum-Number(c.value))) 
+               console.log(calArea)
+               areaOpt2.innerHTML = "Area is =" + calArea
+            }
+            else{
+              areaOpt2.innerHTML = "Enter val greater than 0"
+            }
+        }
+        const area3 = () => {
+          console.log(Number(side1.value),Number(side2.value),Number(ang.value))
+            if (Number(side1.value)>0 & Number(side2.value)>0 & Number(ang.value)>0 ){
+              console.log("if")
+             
+              const calArea =0.5 * Number(side1.value) * Number(side2.value) * Math.sign(Number(ang.value))
+               console.log(calArea)
+               areaOpt3.innerHTML = "Area is =" + calArea
+            }
+            else{
+              areaOpt3.innerHTML = "Enter val greater than 0"
+            }
+        }
+        
+        const clickHandlerArea1 = () => {
+          console.log("check")
+            area1()
+        }
+        const clickHandlerArea2 = () => {
+          console.log("check")
+            area2()
+        }
+        const clickHandlerArea3 = () => {
+          console.log("check")
+            area3()
+        }
+     
+      haveBaseHeight.addEventListener("click", clickHandlerHaveBaseHeight);
+      haveLenOfSide.addEventListener("click", clickHandlerHaveLenOfSide);
+      haveSideAngle.addEventListener("click",   clickHandlerSideAngle);  
+      btncheck1.addEventListener('click',clickHandlerArea1);
+      btncheck2.addEventListener('click',clickHandlerArea2);
+      btncheck3.addEventListener('click',clickHandlerArea3);
+  </script>
 </html>
