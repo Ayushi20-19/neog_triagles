@@ -5,15 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <nav class="navbar" id="myTopnav">
+      <ul class="lists">
+        <li>
+          <a href="./index.html" class="link logo active"
+            >Play with Triangles</a
+          >
+        </li>
+        <li><a class="link" href="./angles.html">Is Triangle</a></li>
+        <li><a class="link" href="./quiz.html">Quiz</a></li>
+        <li><a class="link" href="./hypotenuse.html">Hypotenuse</a></li>
+        <li><a class="link" href="./area.html">Area</a></li>
+      </ul>
+    </nav>
+    <section>
     <h1>angles of triangles</h1>
-    Enter the sides of triangle will tell u will this form a triangle of not
-    <input id="side1"></input>
-    <input id="side2"></input>
-    <input id="side3"></input>
+    <label>Enter the sides of triangle, we will tell you that form a triangle of not</label>
+    <label><input id="side1"></input></label>
+    <label><input id="side2"></input></label>
+    <label><input id="side3"></input></label>
     <button id="btn-check">Check</button>
-    <div class="output">Answer will come here</div>
+    </section>
+    
+    <label><div class="output">Answer will come here</div></label>
   </body>
   <script>
       var side1 =document.querySelector("#side1")

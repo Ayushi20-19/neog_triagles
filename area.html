@@ -5,35 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <nav class="navbar" id="myTopnav">
+      <ul class="lists">
+        <li>
+          <a href="./index.html" class="link logo active"
+            >Play with Triangles</a
+          >
+        </li>
+        <li><a class="link" href="./angles.html">Is Triangle</a></li>
+        <li><a class="link" href="./quiz.html">Quiz</a></li>
+        <li><a class="link" href="./hypotenuse.html">Hypotenuse</a></li>
+        <li><a class="link" href="./area.html">Area</a></li>
+      </ul>
+    </nav>
+    <section>
     <h1>Area of triangles</h1>
-    Enter the lengths of sides of right angle triangle
-    <input type="radio" id="haveBaseHeight" name="triangle"><label for="html">If you have base and height length</label><br>
-    <input type="radio" id="haveLenOfSide" name="triangle"> <label for="html">If you have length of 3 sides</label><br>
-    <input type="radio" id="haveSideAngle" name="triangle"> <label for="html">If you have length of 2 sides and included angle</label><br>
-    <div id="output1">solution1
-    <input id="height">height</input>
-    <input id="base">base</input>
-    <button id="btn-check1">Check</button>
+    <label>Select any one option and enter the required field
+    </label>
+    <div style="color: rgb(19, 82, 82); font-weight: bold;">
+      <label><input type="radio" id="haveBaseHeight" name="triangle"> If you have base and height length</label>
+      <label> <input type="radio" id="haveLenOfSide" name="triangle">  If you have length of 3 sides</label>
+      <label><input type="radio" id="haveSideAngle" name="triangle"> If you have length of 2 sides and included angle </label>
+    </div>
+   
+    <div id="output1" style="display: flex">
+  <label> height <input id="height"></input></label> 
+   <label> base <input id="base"></input></label> 
+   <label> <button id="btn-check1">Check</button></label>
     
-    <span class="area1">Answer will come here</span>
+   <label><span class="area1">Answer will come here</span></label> 
 
     </div>
-    <div id="output2">solution2
-    <input id="side1">a</input>
-    <input id="side2">b</input>
-    <input id="side3">c</input>
-    <button id="btn-check2">Calculate</button>
-    <span class="area2">Answer will come here</span>
+    <div id="output2" style="display: flex;">
+    <label>a <input id="side1"></input></label>
+    <label>b <input id="side2"></input></label>
+   <label>c <input id="side3"></input></label> 
+    <label><button id="btn-check2">Calculate</button></label>
+    <label><span class="area2">Answer will come here</span></label>
     </div>
-    <div id="output3">solution3
-      <input id="side11">a</input>
-      <input id="side22">b</input>
-      <input id="ang">angle</input>
-      <button id="btn-check3">Calculate</button>
-      <span class="area3">Answer will come here</span>
+    <div id="output3" style="display: flex;">
+      <label>a <input id="side11"></input></label>
+      <label>b <input id="side22"></input></label>
+      <label>angle <input id="ang"></input></label>
+     <label><button id="btn-check3">Calculate</button></label> 
+    <label><span class="area3">Answer will come here</span></label>  
       </div>
+    </section>
   </body>
   <script>
       var haveBaseHeight =document.querySelector("#haveBaseHeight");

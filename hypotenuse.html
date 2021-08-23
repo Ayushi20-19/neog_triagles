@@ -5,15 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <nav class="navbar" id="myTopnav">
+      <ul class="lists">
+        <li>
+          <a href="./index.html" class="link logo active"
+            >Play with Triangles</a
+          >
+        </li>
+        <li><a class="link" href="./angles.html">Is Triangle</a></li>
+        <li><a class="link" href="./quiz.html">Quiz</a></li>
+        <li><a class="link" href="./hypotenuse.html">Hypotenuse</a></li>
+        <li><a class="link" href="./area.html">Area</a></li>
+      </ul>
+    </nav>
+    <section>
     <h1>hypotenuse of triangles</h1>
-    Enter the lengths of sides of right angle triangle
-    a=<input id="side1"></input>
-    b=<input id="side2"></input>
-    <button id="btn-check">Check</button>
-    <div >Hypotenuse will be calculated here- <span class="output"></span></span></div>
+    <label>The lengths of sides of right angle triangle</label> 
+    <label>a=<input id="side1"></input></label>
+    <label> b=<input id="side2"></input></label>
+    <label><button id="btn-check">Check</button></label>
+    <label><div >Hypotenuse will be calculated here- <span class="output">Answer</span></span></div></label>
   </body>
+</section>
   <script>
       var side1 =document.querySelector("#side1")
       var side2 =document.querySelector("#side2")
@@ -27,7 +43,7 @@
         }
         const validangle=()=>{
             if (Number(side1.value)>0 & Number(side2.value)>0 ){
-              console.log("if ")
+              //console.log("if ")
               calculateHypotenuse();
             }
             else{
@@ -36,18 +52,11 @@
         }
       const calculateHypotenuse =()=>{
           var sq = Math.pow(Number(side1.value),2)+Math.pow(Number(side2.value),2)
-          console.log(sq)
+          //console.log(sq)
           var c = Math.sqrt(sq)
-          console.log(typeof(c),c)
+          //console.log(typeof(c),c)
           output.innerHTML = c;
-          // if (sum===180){
-          //     console.log("triangle")
-          //     output.innerHTML = 'Yesh it form a triangle';
-          // }
-          // else{
-          //     console.log("not a triangle")
-          //     output.innerHTML = 'Nope it will not form a triangle';
-          // }
+          
       }
       btncheck.addEventListener("click", clickHandler);
 
